@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Um sistema de quadros para organização pessoal.">
+    <title>Trelozo</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer type="module" src="js/main.js"></script>
+</head>
+
+<body>
+
+    <div id="forms">
+        <!-- Seus formulários e conteúdo existentes aqui -->
+        <fieldset>
+            <legend>Cadastrar Usuário</legend>
+            <form id="form-create-user" autocomplete="on">
+                <input type="text" name="name" id="new-name" placeholder="Nome">
+                <input type="text" name="username" id="new-username" placeholder="Username">
+                <input type="password" name="password" id="new-password" placeholder="Password">
+                <input type="text" name="avatar" id="new-avatar" placeholder="Avatar URL">
+                <input type="submit" value="Ok">
+                <input type="reset" value="Cancelar">
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Login</legend>
+            <form id="form-login" autocomplete="on">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="submit" value="Ok">
+                <input type="reset" value="Cancelar">
+            </form>
+        </fieldset>
+    </div>
+
+    <div id="home" style="display: none;">
+        <!-- Conteúdo da página inicial vai aqui -->
+        <div id="navbar">
+            <!-- Conteúdo da barra de navegação vai aqui -->
+            <a href="#">Home</a>
+            <a href="#" id="btn-novo">Novo</a>
+            <a href="#"id="excluir-quadro-link">Excluir Quadro</a>
+            <a href="#" id="sair">Sair</a>
+            <img id="user-thumbnail" src="img/icon.png" alt="Miniatura do Usuário">
+        </div>
+        <div id="navigation">
+            <!-- Navegação Vertical no Canto Superior Esquerdo -->
+            <nav>
+                <ul>    
+                    <a href="#" id="favoritos-link" class="move-link">Favoritos</a>
+                    <a href="#" id="todos-link" class="move-link">Todos</a>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="listas" >
+            <ul id="lista"></ul>
+            </div>
+         
+
+        <div id="quadrosDiv">
+            <ul id="quadros"></ul>
+        </div>
+
+
+        <div id="modal-delete-board" class="modal">
+            <span class="modal-close" id="close-delete-modal">&times;</span>
+            <fieldset>
+                <legend>Excluir Quadro</legend>
+                <label for="delete-board-name">Nome do Quadro:</label>
+                <input type="text" id="delete-board-name" placeholder="Digite o nome do quadro a ser excluído">
+                <p>Tem certeza de que deseja excluir este quadro?</p>
+                <button id="confirm-delete">Confirmar Exclusão</button>
+            </fieldset>
+        </div>
+
+
+    <div id="modal-create-board" class="modal">
+        <span class="modal-close" id="close-modal">&times;</span>
+        <fieldset>
+            <legend>Novo Board</legend>
+            <form id="form-create-board" autocomplete="on">
+                <input type="text" name="boardName" id="board-name" placeholder="Nome do Board">
+                <input type="color" name="boardColor" id="board-color" value="#FF0000">
+                <input type="checkbox" name="favorito" id="favorito"> <label for="favorito">Favorito</label>
+                <input type="submit" value="Criar Board">
+            </form>
+        </fieldset>
+    </div>
+
+</body>
+
+</html>
